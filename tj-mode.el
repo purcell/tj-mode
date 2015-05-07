@@ -220,7 +220,9 @@ ARGS are ignored."
 ;;;###autoload
 (define-derived-mode tj-mode prog-mode "TJ"
   "Major mode to highlight JavaScript using an external parser–Tern."
-  (tj-mode-enter))
+  (if tj-mode
+      (tj-mode-enter)
+    (tj-mode-exit)))
 
 (provide 'tern-js)
 
